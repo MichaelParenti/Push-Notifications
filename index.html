@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push Notifications</title>
+</head>
+<body>
+    <button onclick="enable()">Enable Push Notifications</button>
+
+    <script>
+        function enable() {
+            Notification.requestPermission().then(perm => {
+                if (perm === "granted") {
+                    const notification = new Notification("Push Notifications are Working", {
+                        body: "it says something here", 
+                        icon: "icon.adress.png"
+                    })
+                }
+            })
+        }
+        
+    </script>
+</body>
+</html>
